@@ -1,0 +1,10 @@
+Package: com.julioverne.fiona
+Name: Fiona
+Depends: mobilesubstrate
+Version: 0.1
+Architecture: iphoneos-arm
+Description: Recompiled for A12 by ARM64-Darwin1820
+Maintainer: ARM64-Darwin1820
+Author: Julioverne
+Section: Tweaks
+SileoDepiction: julioverne.github.io

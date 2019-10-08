@@ -1,23 +1,23 @@
-include theos/makefiles/common.mk
+include $(THEOS)/makefiles/common.mk
 
-BUNDLE_NAME = FionaSettings
-FionaSettings_FILES = FionaSettingsController.mm
-FionaSettings_INSTALL_PATH = /Library/PreferenceBundles
-FionaSettings_FRAMEWORKS = UIKit QuartzCore CoreGraphics MessageUI Social Twitter
-FionaSettings_PRIVATE_FRAMEWORKS = Preferences
-FionaSettings_CFLAGS = -fobjc-arc
+BUNDLE_NAME = FionaPrefs
+FionaPrefs_FILES = FionaPrefsController.mm
+FionaPrefs_INSTALL_PATH = /Library/PreferenceBundles
+FionaPrefs_FRAMEWORKS = UIKit QuartzCore CoreGraphics MessageUI Social Twitter
+FionaPrefs_PRIVATE_FRAMEWORKS = Preferences
+#FionaPrefs_CFLAGS = -fobjc-arc
 
-FionaSettings_LDFLAGS = -Wl,-segalign,4000
+#FionaPrefs_LDFLAGS = -Wl,-segalign,4000
 
-FionaSettings_ARCHS = armv7 arm64
-export ARCHS = armv7 arm64
+FionaPrefs_ARCHS = armv7 arm64 arm64e
+export ARCHS = armv7 arm64 arm64e
 
 include $(THEOS_MAKE_PATH)/bundle.mk
 
 all::
 	@echo "[+] Copying Files..."
-	@cp ./obj/FionaSettings.bundle/FionaSettings //Library/PreferenceBundles/FionaSettings.bundle/FionaSettings
-	@ldid -S //Library/PreferenceBundles/FionaSettings.bundle/FionaSettings
+	@cp ./.theos/FionaPrefs.bundle/FionaPrefs $(THEOS_STAGING_DIR)/Library/PreferenceBundles/FionaPrefs.bundle/FionaPrefs
+	@ldid -S $(THEOS_STAGING_DIR)/Library/PreferenceBundles/FionaPrefs.bundle/FionaPrefs
 	@echo "DONE"
 	
 	

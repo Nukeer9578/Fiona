@@ -171,7 +171,7 @@ static void settingsChangedFionaByToogle(CFNotificationCenterRef center, void *o
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
     if (alertView.tag == 55 && buttonIndex == 1) {
-        system("killall backboardd SpringBoard");
+        
     }
 }
 - (id)readPreferenceValue:(PSSpecifier*)specifier
