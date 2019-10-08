@@ -23,5 +23,5 @@ after-install::
 	@echo "DONE"
 	#@killall SpringBoard
 
-#SUBPROJECTS += fionasettings
+#SUBPROJECTS += FionaPrefs
 include $(THEOS_MAKE_PATH)/aggregate.mk
